@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034359FB1A97CD4000696598 /* projectdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 034359FA1A97CD4000696598 /* projectdata.json */; };
+		034359FF1A97CD9D00696598 /* LCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 034359FE1A97CD9D00696598 /* LCData.m */; };
 		03CD5EFD1A9183E300EE3FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD5EFC1A9183E300EE3FBD /* main.m */; };
 		03CD5F001A9183E300EE3FBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD5EFF1A9183E300EE3FBD /* AppDelegate.m */; };
 		03CD5F031A9183E300EE3FBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD5F021A9183E300EE3FBD /* ViewController.m */; };
@@ -27,6 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		034359FA1A97CD4000696598 /* projectdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = projectdata.json; sourceTree = "<group>"; };
+		034359FD1A97CD9D00696598 /* LCData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCData.h; sourceTree = "<group>"; };
+		034359FE1A97CD9D00696598 /* LCData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCData.m; sourceTree = "<group>"; };
+		03435A001A97D05A00696598 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		03CD5EF71A9183E300EE3FBD /* ListChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CD5EFB1A9183E300EE3FBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03CD5EFC1A9183E300EE3FBD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,6 +66,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		034359FC1A97CD4A00696598 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				034359FA1A97CD4000696598 /* projectdata.json */,
+				034359FD1A97CD9D00696598 /* LCData.h */,
+				034359FE1A97CD9D00696598 /* LCData.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		03CD5EEE1A9183E300EE3FBD = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +104,7 @@
 				03CD5F041A9183E300EE3FBD /* Main.storyboard */,
 				03CD5F071A9183E300EE3FBD /* Images.xcassets */,
 				03CD5F091A9183E300EE3FBD /* LaunchScreen.xib */,
+				034359FC1A97CD4A00696598 /* Data */,
 				03CD5EFA1A9183E300EE3FBD /* Supporting Files */,
 			);
 			path = ListChallenge;
@@ -98,6 +115,7 @@
 			children = (
 				03CD5EFB1A9183E300EE3FBD /* Info.plist */,
 				03CD5EFC1A9183E300EE3FBD /* main.m */,
+				03435A001A97D05A00696598 /* Constants.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -200,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CD5F061A9183E300EE3FBD /* Main.storyboard in Resources */,
+				034359FB1A97CD4000696598 /* projectdata.json in Resources */,
 				03CD5F0B1A9183E300EE3FBD /* LaunchScreen.xib in Resources */,
 				03CD5F081A9183E300EE3FBD /* Images.xcassets in Resources */,
 			);
@@ -219,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034359FF1A97CD9D00696598 /* LCData.m in Sources */,
 				03CD5F031A9183E300EE3FBD /* ViewController.m in Sources */,
 				03CD5F001A9183E300EE3FBD /* AppDelegate.m in Sources */,
 				03CD5EFD1A9183E300EE3FBD /* main.m in Sources */,
@@ -348,6 +368,7 @@
 				INFOPLIST_FILE = ListChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -358,6 +379,7 @@
 				INFOPLIST_FILE = ListChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -414,6 +436,7 @@
 				03CD5F1C1A9183E400EE3FBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03CD5F1D1A9183E400EE3FBD /* Build configuration list for PBXNativeTarget "ListChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +445,7 @@
 				03CD5F1F1A9183E400EE3FBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

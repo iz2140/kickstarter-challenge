@@ -1,0 +1,341 @@
+{
+    "projects": [
+        {
+            "slug": "the-stutthof-diaries-collection",
+            "location": {
+                "slug": "surrey-bc-ca",
+                "is_root": false,
+                "country": "CA",
+                "displayable_name": "Surrey, Canada",
+                "short_name": "Surrey, Canada",
+                "name": "Surrey",
+                "type": "Town",
+                "state": "BC",
+                "id": 23404885
+            },
+            "launched_at": 1421872666,
+            "blurb": "A unique collection of diaries, enabling the reader to experience close up the redemptive force of conscious choice against evil.",
+            "country": "CA",
+            "creator": {
+                "name": "Tore Jørgensen",
+                "id": 2096167857,
+                "avatar": {
+                    "medium": "https://s3.amazonaws.com/ksr/avatars/11653293/IMG_0059.medium.jpg?1417904683",
+                    "small": "https://s3.amazonaws.com/ksr/avatars/11653293/IMG_0059.small.jpg?1417904683",
+                    "thumb": "https://s3.amazonaws.com/ksr/avatars/11653293/IMG_0059.thumb.jpg?1417904683"
+                }
+            },
+            "currency_symbol": "$",
+            "updated_at": 1421875224,
+            "pledged": 2365,
+            "currency": "CAD",
+            "disable_communication": false,
+            "category": {
+                "slug": "publishing/nonfiction",
+                "position": 8,
+                "parent_id": 18,
+                "name": "Nonfiction",
+                "id": 48
+            },
+            "video": {
+                "status": "successful",
+                "frame": "https://d2pq0u4uni88oo.cloudfront.net/projects/1202734/video-487528-h264_base.jpg?2015",
+                "webm": "https://d2pq0u4uni88oo.cloudfront.net/projects/1202734/video-487528-webm.webm?2015",
+                "base": "https://d2pq0u4uni88oo.cloudfront.net/projects/1202734/video-487528-h264_base.mp4?2015",
+                "high": "https://d2pq0u4uni88oo.cloudfront.net/projects/1202734/video-487528-h264_high.mp4?2015",
+                "id": 487528,
+                "height": 470,
+                "width": 640
+            },
+            "name": "The Stutthof Diaries Collection",
+            "state": "live",
+            "id": 584387795,
+            "currency_trailing_code": true,
+            "state_changed_at": 1421872667,
+            "deadline": 1424145600,
+            "backers_count": 58,
+            "goal": 15000,
+            "created_at": 1406411444,
+            "photo": {
+                "full": "https://s3.amazonaws.com/ksr/projects/1202734/photo-full.jpg?1421000557",
+                "ed": "https://s3.amazonaws.com/ksr/projects/1202734/photo-ed.jpg?1421000557",
+                "little": "https://s3.amazonaws.com/ksr/projects/1202734/photo-little.jpg?1421000557",
+                "small": "https://s3.amazonaws.com/ksr/projects/1202734/photo-small.jpg?1421000557",
+                "med": "https://s3.amazonaws.com/ksr/projects/1202734/photo-med.jpg?1421000557",
+                "thumb": "https://s3.amazonaws.com/ksr/projects/1202734/photo-thumb.jpg?1421000557",
+                "1536x1152": "https://s3.amazonaws.com/ksr/projects/1202734/photo-1536x1152.jpg?1421000557",
+                "1024x768": "https://s3.amazonaws.com/ksr/projects/1202734/photo-1024x768.jpg?1421000557"
+            }
+        },
+        {
+            "slug": "save-the-historic-barns-lemax-farm-north-hartland",
+            "location": {
+                "slug": "hartland-vt",
+                "is_root": false,
+                "country": "US",
+                "displayable_name": "Hartland, VT",
+                "short_name": "Hartland, VT",
+                "name": "Hartland",
+                "type": "Town",
+                "state": "VT",
+                "id": 2418300
+            },
+            "launched_at": 1423489585,
+            "blurb": "The iconic barns at Lemax Farm have been a gateway to southern Vermont for 200 years. Help us bring them back to their original glory.",
+            "country": "US",
+            "creator": {
+                "name": "Friends of Lemax Farm",
+                "id": 1914100895,
+                "avatar": {
+                    "medium": "https://s3.amazonaws.com/ksr/avatars/13441273/banner_photo.medium.jpg?1418747124",
+                    "small": "https://s3.amazonaws.com/ksr/avatars/13441273/banner_photo.small.jpg?1418747124",
+                    "thumb": "https://s3.amazonaws.com/ksr/avatars/13441273/banner_photo.thumb.jpg?1418747124"
+                }
+            },
+            "currency_symbol": "$",
+            "updated_at": 1423779663,
+            "pledged": 3425,
+            "currency": "USD",
+            "disable_communication": false,
+            "category": {
+                "slug": "food/farms",
+                "position": 7,
+                "parent_id": 10,
+                "name": "Farms",
+                "id": 309
+            },
+            "video": {
+                "status": "successful",
+                "frame": "https://d2pq0u4uni88oo.cloudfront.net/projects/1544575/video-495705-h264_base.jpg?2015",
+                "webm": "https://d2pq0u4uni88oo.cloudfront.net/projects/1544575/video-495705-webm.webm?2015",
+                "base": "https://d2pq0u4uni88oo.cloudfront.net/projects/1544575/video-495705-h264_base.mp4?2015",
+                "high": "https://d2pq0u4uni88oo.cloudfront.net/projects/1544575/video-495705-h264_high.mp4?2015",
+                "id": 495705,
+                "height": 360,
+                "width": 640
+            },
+            "name": "Save the historic barns! Lemax Farm, North Hartland, Vermont",
+            "state": "live",
+            "id": 250732794,
+            "currency_trailing_code": true,
+            "state_changed_at": 1423489585,
+            "deadline": 1425272340,
+            "backers_count": 36,
+            "goal": 15000,
+            "created_at": 1418745674,
+            "photo": {
+                "full": "https://s3.amazonaws.com/ksr/projects/1544575/photo-full.jpg?1418746453",
+                "ed": "https://s3.amazonaws.com/ksr/projects/1544575/photo-ed.jpg?1418746453",
+                "little": "https://s3.amazonaws.com/ksr/projects/1544575/photo-little.jpg?1418746453",
+                "small": "https://s3.amazonaws.com/ksr/projects/1544575/photo-small.jpg?1418746453",
+                "med": "https://s3.amazonaws.com/ksr/projects/1544575/photo-med.jpg?1418746453",
+                "thumb": "https://s3.amazonaws.com/ksr/projects/1544575/photo-thumb.jpg?1418746453",
+                "1536x1152": "https://s3.amazonaws.com/ksr/projects/1544575/photo-1536x1152.jpg?1418746453",
+                "1024x768": "https://s3.amazonaws.com/ksr/projects/1544575/photo-1024x768.jpg?1418746453"
+            }
+        },
+        {
+            "slug": "swish-n-flick-book-candles",
+            "location": {
+                "slug": "denver-co",
+                "is_root": false,
+                "country": "US",
+                "displayable_name": "Denver, CO",
+                "short_name": "Denver, CO",
+                "name": "Denver",
+                "type": "Town",
+                "state": "CO",
+                "id": 2391279
+            },
+            "launched_at": 1419875418,
+            "blurb": "Handmade Magical candles to make you feel like you're in another world! Inspired by books, movies, and video games.",
+            "country": "US",
+            "creator": {
+                "name": "Krystalle Wetzlich",
+                "id": 1318765882,
+                "avatar": {
+                    "medium": "https://s3.amazonaws.com/ksr/avatars/9270023/jjk.medium.jpg?1419059445",
+                    "small": "https://s3.amazonaws.com/ksr/avatars/9270023/jjk.small.jpg?1419059445",
+                    "thumb": "https://s3.amazonaws.com/ksr/avatars/9270023/jjk.thumb.jpg?1419059445"
+                }
+            },
+            "currency_symbol": "$",
+            "updated_at": 1422721947,
+            "pledged": 13513,
+            "currency": "USD",
+            "disable_communication": false,
+            "category": {
+                "slug": "crafts/candles",
+                "position": 1,
+                "parent_id": 26,
+                "name": "Candles",
+                "id": 343
+            },
+            "video": {
+                "status": "successful",
+                "frame": "https://d2pq0u4uni88oo.cloudfront.net/projects/820257/video-477851-h264_base.jpg?2014",
+                "webm": "https://d2pq0u4uni88oo.cloudfront.net/projects/820257/video-477851-webm.webm?2014",
+                "base": "https://d2pq0u4uni88oo.cloudfront.net/projects/820257/video-477851-h264_base.mp4?2014",
+                "high": "https://d2pq0u4uni88oo.cloudfront.net/projects/820257/video-477851-h264_high.mp4?2014",
+                "id": 477851,
+                "height": 480,
+                "width": 640
+            },
+            "name": "Swish N' Flick Book Candles",
+            "state": "live",
+            "id": 2093263971,
+            "currency_trailing_code": true,
+            "state_changed_at": 1419875418,
+            "deadline": 1424195418,
+            "backers_count": 371,
+            "goal": 4500,
+            "created_at": 1389118153,
+            "photo": {
+                "full": "https://s3.amazonaws.com/ksr/projects/820257/photo-full.jpg?1417681268",
+                "ed": "https://s3.amazonaws.com/ksr/projects/820257/photo-ed.jpg?1417681268",
+                "little": "https://s3.amazonaws.com/ksr/projects/820257/photo-little.jpg?1417681268",
+                "small": "https://s3.amazonaws.com/ksr/projects/820257/photo-small.jpg?1417681268",
+                "med": "https://s3.amazonaws.com/ksr/projects/820257/photo-med.jpg?1417681268",
+                "thumb": "https://s3.amazonaws.com/ksr/projects/820257/photo-thumb.jpg?1417681268",
+                "1536x1152": "https://s3.amazonaws.com/ksr/projects/820257/photo-1536x1152.jpg?1417681268",
+                "1024x768": "https://s3.amazonaws.com/ksr/projects/820257/photo-1024x768.jpg?1417681268"
+            }
+        },
+        {
+            "slug": "underworld-ascendant",
+            "location": {
+                "slug": "lexington-ma",
+                "is_root": false,
+                "country": "US",
+                "displayable_name": "Lexington, MA",
+                "short_name": "Lexington, MA",
+                "name": "Lexington",
+                "type": "Town",
+                "state": "MA",
+                "id": 2438840
+            },
+            "launched_at": 1423058075,
+            "blurb": "Join the original team behind Ultima Underworld on a \nquest to rekindle this legendary fantasy RPG series.",
+            "country": "US",
+            "creator": {
+                "slug": "othersidegames",
+                "name": "OtherSide Entertainment",
+                "id": 1809542068,
+                "avatar": {
+                    "medium": "https://s3.amazonaws.com/ksr/avatars/13630654/otherside_400x400.medium.jpg?1421277424",
+                    "small": "https://s3.amazonaws.com/ksr/avatars/13630654/otherside_400x400.small.jpg?1421277424",
+                    "thumb": "https://s3.amazonaws.com/ksr/avatars/13630654/otherside_400x400.thumb.jpg?1421277424"
+                }
+            },
+            "currency_symbol": "$",
+            "updated_at": 1423789128,
+            "pledged": 416488.09,
+            "currency": "USD",
+            "disable_communication": false,
+            "category": {
+                "slug": "games/video games",
+                "position": 7,
+                "parent_id": 12,
+                "name": "Video Games",
+                "id": 35
+            },
+            "video": {
+                "status": "successful",
+                "frame": "https://d2pq0u4uni88oo.cloudfront.net/projects/1594725/video-493364-h264_base.jpg?2015",
+                "webm": "https://d2pq0u4uni88oo.cloudfront.net/projects/1594725/video-493364-webm.webm?2015",
+                "base": "https://d2pq0u4uni88oo.cloudfront.net/projects/1594725/video-493364-h264_base.mp4?2015",
+                "high": "https://d2pq0u4uni88oo.cloudfront.net/projects/1594725/video-493364-h264_high.mp4?2015",
+                "id": 493364,
+                "height": 360,
+                "width": 640
+            },
+            "name": "Underworld Ascendant",
+            "state": "live",
+            "id": 161830840,
+            "potd_at": 1423612800,
+            "currency_trailing_code": true,
+            "state_changed_at": 1423058075,
+            "deadline": 1425650075,
+            "backers_count": 7732,
+            "goal": 600000,
+            "created_at": 1421274456,
+            "photo": {
+                "full": "https://s3.amazonaws.com/ksr/projects/1594725/photo-full.jpg?1423706405",
+                "ed": "https://s3.amazonaws.com/ksr/projects/1594725/photo-ed.jpg?1423706405",
+                "little": "https://s3.amazonaws.com/ksr/projects/1594725/photo-little.jpg?1423706405",
+                "small": "https://s3.amazonaws.com/ksr/projects/1594725/photo-small.jpg?1423706405",
+                "med": "https://s3.amazonaws.com/ksr/projects/1594725/photo-med.jpg?1423706405",
+                "thumb": "https://s3.amazonaws.com/ksr/projects/1594725/photo-thumb.jpg?1423706405",
+                "1536x1152": "https://s3.amazonaws.com/ksr/projects/1594725/photo-1536x1152.jpg?1423706405",
+                "1024x768": "https://s3.amazonaws.com/ksr/projects/1594725/photo-1024x768.jpg?1423706405"
+            }
+        },
+        {
+            "slug": "the-beginning-farmer-show-video-project",
+            "location": {
+                "slug": "knoxville-ia",
+                "is_root": false,
+                "country": "US",
+                "displayable_name": "Knoxville, IA",
+                "short_name": "Knoxville, IA",
+                "name": "Knoxville",
+                "type": "Town",
+                "state": "IA",
+                "id": 2433661
+            },
+            "launched_at": 1422418330,
+            "blurb": "The Beginning Farmer Show is ready to add video to help capture the journey of a beginning farmer. How-to videos, interviews, & tours!",
+            "country": "US",
+            "creator": {
+                "name": "Ethan Book",
+                "id": 645062208,
+                "avatar": {
+                    "medium": "https://s3.amazonaws.com/ksr/avatars/12651641/image.medium.jpg?1413219366",
+                    "small": "https://s3.amazonaws.com/ksr/avatars/12651641/image.small.jpg?1413219366",
+                    "thumb": "https://s3.amazonaws.com/ksr/avatars/12651641/image.thumb.jpg?1413219366"
+                }
+            },
+            "currency_symbol": "$",
+            "updated_at": 1422573045,
+            "pledged": 2162,
+            "currency": "USD",
+            "disable_communication": false,
+            "category": {
+                "slug": "film & video/documentary",
+                "position": 4,
+                "parent_id": 11,
+                "name": "Documentary",
+                "id": 30
+            },
+            "video": {
+                "status": "successful",
+                "frame": "https://d2pq0u4uni88oo.cloudfront.net/projects/1403938/video-490851-h264_base.jpg?2015",
+                "webm": "https://d2pq0u4uni88oo.cloudfront.net/projects/1403938/video-490851-webm.webm?2015",
+                "base": "https://d2pq0u4uni88oo.cloudfront.net/projects/1403938/video-490851-h264_base.mp4?2015",
+                "high": "https://d2pq0u4uni88oo.cloudfront.net/projects/1403938/video-490851-h264_high.mp4?2015",
+                "id": 490851,
+                "height": 360,
+                "width": 640
+            },
+            "name": "The Beginning Farmer Show Video Project",
+            "state": "live",
+            "id": 98904547,
+            "currency_trailing_code": true,
+            "state_changed_at": 1422418330,
+            "deadline": 1424993400,
+            "backers_count": 53,
+            "goal": 1200,
+            "created_at": 1413218268,
+            "photo": {
+                "full": "https://s3.amazonaws.com/ksr/projects/1403938/photo-full.jpg?1413230148",
+                "ed": "https://s3.amazonaws.com/ksr/projects/1403938/photo-ed.jpg?1413230148",
+                "little": "https://s3.amazonaws.com/ksr/projects/1403938/photo-little.jpg?1413230148",
+                "small": "https://s3.amazonaws.com/ksr/projects/1403938/photo-small.jpg?1413230148",
+                "med": "https://s3.amazonaws.com/ksr/projects/1403938/photo-med.jpg?1413230148",
+                "thumb": "https://s3.amazonaws.com/ksr/projects/1403938/photo-thumb.jpg?1413230148",
+                "1536x1152": "https://s3.amazonaws.com/ksr/projects/1403938/photo-1536x1152.jpg?1413230148",
+                "1024x768": "https://s3.amazonaws.com/ksr/projects/1403938/photo-1024x768.jpg?1413230148"
+            }
+        }
+    ]
+}
