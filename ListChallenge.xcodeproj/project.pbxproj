@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		034359FB1A97CD4000696598 /* projectdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 034359FA1A97CD4000696598 /* projectdata.json */; };
 		034359FF1A97CD9D00696598 /* LCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 034359FE1A97CD9D00696598 /* LCData.m */; };
+		039E9D911A993E0F00E1B50C /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 039E9D901A993E0F00E1B50C /* CustomTableViewCell.m */; };
 		03CD5EFD1A9183E300EE3FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD5EFC1A9183E300EE3FBD /* main.m */; };
 		03CD5F001A9183E300EE3FBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD5EFF1A9183E300EE3FBD /* AppDelegate.m */; };
 		03CD5F031A9183E300EE3FBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD5F021A9183E300EE3FBD /* ViewController.m */; };
@@ -33,6 +34,8 @@
 		034359FD1A97CD9D00696598 /* LCData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCData.h; sourceTree = "<group>"; };
 		034359FE1A97CD9D00696598 /* LCData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCData.m; sourceTree = "<group>"; };
 		03435A001A97D05A00696598 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		039E9D8F1A993E0F00E1B50C /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		039E9D901A993E0F00E1B50C /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		03CD5EF71A9183E300EE3FBD /* ListChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CD5EFB1A9183E300EE3FBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03CD5EFC1A9183E300EE3FBD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 				03CD5F091A9183E300EE3FBD /* LaunchScreen.xib */,
 				034359FC1A97CD4A00696598 /* Data */,
 				03CD5EFA1A9183E300EE3FBD /* Supporting Files */,
+				039E9D8F1A993E0F00E1B50C /* CustomTableViewCell.h */,
+				039E9D901A993E0F00E1B50C /* CustomTableViewCell.m */,
 			);
 			path = ListChallenge;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				034359FF1A97CD9D00696598 /* LCData.m in Sources */,
 				03CD5F031A9183E300EE3FBD /* ViewController.m in Sources */,
 				03CD5F001A9183E300EE3FBD /* AppDelegate.m in Sources */,
+				039E9D911A993E0F00E1B50C /* CustomTableViewCell.m in Sources */,
 				03CD5EFD1A9183E300EE3FBD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

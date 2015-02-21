@@ -8,11 +8,15 @@
 
 #import "ViewController.h"
 #import "LCData.h"
+#import "CustomTableViewCell.h"
+#define NUMBER_OF_ROWS 15
 
 @interface ViewController ()
 
+
 @property (nonatomic, strong) NSArray *projectNames;
 @property (nonatomic, strong) NSArray *pledges;
+
 
 @end
 
@@ -35,6 +39,9 @@
     
     NSLog(@"%@", projname);
     
+//    NSArray *projectNames = [[LCData sharedData] projectNamesforListView];
+//    if (projectNames)
+//        _projectNames = projectNames;
     
     
 }
@@ -46,20 +53,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.projectNames count];
+    return NUMBER_OF_ROWS;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SimpleCell"];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    cell.projectName.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    cell.location.text = [NSString stringWithFormat:@"%ld", NUMBER_OF_ROWS - indexPath.row];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    
-    cell.textLabel.text = [self.projectNames objectAtIndex:indexPath.row];
     return cell;
 }
 @end

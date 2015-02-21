@@ -52,7 +52,7 @@
     if (!_projects) {
         _projects = [self.data objectForKey: @"projects"];
     }
-    return self.projects;
+    return _projects;
 }
 
 //generic method to grab an entry from a dictionary given the dictionary and key
