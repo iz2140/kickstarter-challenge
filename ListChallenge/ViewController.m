@@ -38,6 +38,9 @@
 //    NSString* projname = [firstobj objectForKey: @"name"];
 //    
 //    NSLog(@"%@", projname);
+//    self.tableView.estimatedRowHeight = 68.0;
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
     
     NSArray *projectNames = [[LCData sharedData] arrayforListViewForInfo: @"name"];
     if (projectNames)
