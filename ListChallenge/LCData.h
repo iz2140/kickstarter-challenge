@@ -19,5 +19,7 @@
 //only access singleton. Do not create any new instances of LCData
 +(LCData *)sharedData;
 -(NSArray *) projectNamesforListView;
+-(NSArray *) locationsforListView;
+-(NSArray *) arrayforListViewForInfo: (NSString *) key;
 
 @end

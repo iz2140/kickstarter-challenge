@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) NSArray *projectNames;
 @property (nonatomic, strong) NSArray *pledges;
-
+@property (nonatomic, strong) NSArray *locations;
 
 @end
 
@@ -25,26 +25,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSDictionary *data = [[LCData sharedData] getData];
+//    NSDictionary *data = [[LCData sharedData] getData];
+//    
+//    NSArray *temp = [data objectForKey:@"projects"];
+//    
+//    NSDictionary *firstobj = [temp objectAtIndex:0];
+//    
+//    for (NSDictionary *project in temp ){
+//        NSLog( @"%@", [project objectForKey: @"name"]);
+//    }
+//    
+//    NSString* projname = [firstobj objectForKey: @"name"];
+//    
+//    NSLog(@"%@", projname);
     
-    NSArray *temp = [data objectForKey:@"projects"];
+    NSArray *projectNames = [[LCData sharedData] arrayforListViewForInfo: @"name"];
+    if (projectNames)
+        _projectNames = projectNames;
     
-    NSDictionary *firstobj = [temp objectAtIndex:0];
+    NSArray *locations = [[LCData sharedData] arrayforListViewForInfo: @"country"];
+    if (locations && [[locations firstObject] isKindOfClass:[NSString class]])
+        _locations = locations;
     
-    for (NSDictionary *project in temp ){
-        NSLog( @"%@", [project objectForKey: @"name"]);
+    NSArray *pledges = [[LCData sharedData] arrayforListViewForInfo: @"pledged"];
+    if ( [[pledges firstObject] isKindOfClass:[NSString class]]){
+        NSLog(@"hi");
+    } else {
+        NSLog(@"hrm");
     }
-    
-    NSString* projname = [firstobj objectForKey: @"name"];
-    
-    NSLog(@"%@", projname);
-    
-//    NSArray *projectNames = [[LCData sharedData] projectNamesforListView];
-//    if (projectNames)
-//        _projectNames = projectNames;
     
     
 }
+
+//need to write helper method in LCData that checks if returned objects are strings, bools, or numbers... have to display as strings.
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -53,15 +66,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return NUMBER_OF_ROWS;
+    return [self.projectNames count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SimpleCell"];
     
-    cell.projectName.text = [NSString stringWithFormat:@"%ld", indexPath.row];
-    cell.location.text = [NSString stringWithFormat:@"%ld", NUMBER_OF_ROWS - indexPath.row];
+    cell.projectName.text = [self.projectNames objectAtIndex:indexPath.row];
+    cell.location.text = [self.locations objectAtIndex: indexPath.row];
+    //cell.pledged.text = [self.pledges objectAtIndex: indexPath.row];
     
     return cell;
 }

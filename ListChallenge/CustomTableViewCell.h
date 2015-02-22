@@ -12,5 +12,6 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *projectName;
 @property (nonatomic, weak) IBOutlet UILabel *location;
+@property (nonatomic, weak) IBOutlet UILabel *pledged;
 
 @end

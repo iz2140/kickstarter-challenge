@@ -58,6 +58,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="location" destination="UUB-a5-ndr" id="stG-oh-5WD"/>
+                                            <outlet property="pledged" destination="R3U-RE-cRP" id="auJ-f2-h9w"/>
                                             <outlet property="projectName" destination="Jho-Ec-vca" id="TI2-hm-JU8"/>
                                         </connections>
                                     </tableViewCell>

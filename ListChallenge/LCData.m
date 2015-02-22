@@ -95,12 +95,34 @@
     return temp;
 }
 
-//method used in the list view to see names of projects
+//generic method used to retrieve array of info for listView -- exception may occur if given wrong argument
+-(NSArray *) arrayforListViewForInfo: (NSString *) key {
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    @try {
+        for (NSDictionary *dictionary in self.projects) {
+            [array addObject: [dictionary objectForKey: key]];
+        }
+    }@catch(NSException *e){
+        NSLog(@"exception thrown in method arrayForListViewForInfo; %@ %@", [e name], [e reason]);
+    }
+    return array;
+}
+
+//method used in the list view to retrieve names of projects
 -(NSArray *) projectNamesforListView {
     NSMutableArray *names = [[NSMutableArray alloc] init];
     for (NSDictionary *dictionary in self.projects) {
-        [names addObject: [dictionary objectForKey: @"projectname"]];
+        [names addObject: [dictionary objectForKey: @"name"]];
     }
     return names;
+}
+
+//method used in the list view to retrieve locations of projects
+-(NSArray *) locationsforListView {
+    NSMutableArray *locations = [[NSMutableArray alloc] init];
+    for (NSDictionary *dictionary in self.projects) {
+        [locations addObject: [dictionary objectForKey: @"country"]];
+    }
+    return locations;
 }
 @end
