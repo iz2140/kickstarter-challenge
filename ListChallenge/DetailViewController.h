@@ -10,4 +10,14 @@
 
 @interface DetailViewController : UITableViewController
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSString *pSlug;
+@property (weak, nonatomic) IBOutlet UILabel *projectName;
+@property (weak, nonatomic) IBOutlet UILabel *funded;
+@property (weak, nonatomic) IBOutlet UILabel *pledged;
+@property (weak, nonatomic) IBOutlet UILabel *backers;
+@property (weak, nonatomic) IBOutlet UILabel *creator;
+@property (weak, nonatomic) IBOutlet UILabel *location;
+@property (weak, nonatomic) IBOutlet UILabel *blurb;
+@property (weak, nonatomic) IBOutlet UIImage *image;
 @end

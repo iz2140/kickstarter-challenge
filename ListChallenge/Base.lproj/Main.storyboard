@@ -30,15 +30,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1qP-Q7-cuO" id="qAl-rO-AJq">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Pledged" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3U-RE-cRP">
-                                                    <rect key="frame" x="400" y="20" width="146" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="146" id="gRF-SP-iXC"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="-1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Project Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jho-Ec-vca">
                                                     <rect key="frame" x="15" y="8" width="248" height="16"/>
                                                     <constraints>
@@ -58,38 +49,18 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Jho-Ec-vca" secondAttribute="trailing" constant="226" id="35B-MM-8ec"/>
-                                                <constraint firstItem="Jho-Ec-vca" firstAttribute="leading" secondItem="qAl-rO-AJq" secondAttribute="leadingMargin" constant="49" id="DUX-AR-swq"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="R3U-RE-cRP" secondAttribute="trailing" constant="13" id="LxU-wN-rBh"/>
                                                 <constraint firstItem="Jho-Ec-vca" firstAttribute="top" secondItem="qAl-rO-AJq" secondAttribute="topMargin" id="NCb-ka-BZG"/>
                                                 <constraint firstItem="Jho-Ec-vca" firstAttribute="leading" secondItem="UUB-a5-ndr" secondAttribute="leading" id="Qnc-Kx-I5g"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="UUB-a5-ndr" secondAttribute="trailing" constant="7" id="RgO-1y-HRe"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="R3U-RE-cRP" secondAttribute="bottom" constant="50.5" id="SQF-8f-MkM"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Jho-Ec-vca" secondAttribute="bottom" constant="42" id="doN-th-6HF"/>
                                                 <constraint firstItem="UUB-a5-ndr" firstAttribute="top" secondItem="Jho-Ec-vca" secondAttribute="bottom" constant="7" id="dvp-bO-fqC"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Jho-Ec-vca" secondAttribute="trailing" constant="226" id="fYu-9s-teU"/>
                                                 <constraint firstItem="UUB-a5-ndr" firstAttribute="leading" secondItem="qAl-rO-AJq" secondAttribute="leadingMargin" constant="7" id="gPB-Mc-iex"/>
-                                                <constraint firstItem="R3U-RE-cRP" firstAttribute="top" secondItem="qAl-rO-AJq" secondAttribute="topMargin" constant="12" id="lwc-ei-htp"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="UUB-a5-ndr" secondAttribute="bottom" constant="2.5" id="qqb-oL-dfW"/>
-                                                <constraint firstItem="UUB-a5-ndr" firstAttribute="top" secondItem="Jho-Ec-vca" secondAttribute="bottom" constant="-3" id="rHb-2d-AOm"/>
-                                                <constraint firstItem="Jho-Ec-vca" firstAttribute="leading" secondItem="UUB-a5-ndr" secondAttribute="trailing" constant="-71" id="v8B-VC-mnS"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="35B-MM-8ec"/>
-                                                    <exclude reference="DUX-AR-swq"/>
-                                                    <exclude reference="doN-th-6HF"/>
-                                                    <exclude reference="fYu-9s-teU"/>
-                                                    <exclude reference="v8B-VC-mnS"/>
-                                                    <exclude reference="rHb-2d-AOm"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="location" destination="UUB-a5-ndr" id="stG-oh-5WD"/>
-                                            <outlet property="pledged" destination="R3U-RE-cRP" id="auJ-f2-h9w"/>
                                             <outlet property="projectName" destination="Jho-Ec-vca" id="TI2-hm-JU8"/>
-                                            <segue destination="0iT-Mk-sFj" kind="show" id="8J3-bw-Dn9"/>
+                                            <segue destination="0iT-Mk-sFj" kind="show" identifier="Prepare Detail" id="8J3-bw-Dn9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -113,7 +84,7 @@
         <!--Project Detail-->
         <scene sceneID="ZBC-ru-xHZ">
             <objects>
-                <tableViewController title="Project Detail" id="0iT-Mk-sFj" sceneMemberID="viewController">
+                <tableViewController title="Project Detail" id="0iT-Mk-sFj" customClass="DetailViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="CJj-fg-tBJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,7 +98,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdq-z8-ciE">
-                                                    <rect key="frame" x="235" y="5" width="132" height="27"/>
+                                                    <rect key="frame" x="234.5" y="5" width="131.5" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -181,7 +152,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pledged" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyT-Ze-9lo">
-                                                    <rect key="frame" x="49" y="12" width="64" height="21"/>
+                                                    <rect key="frame" x="49" y="11.5" width="63.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -267,7 +238,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O2Q-Gk-NS6">
-                                                    <rect key="frame" x="239" y="6" width="123" height="30"/>
+                                                    <rect key="frame" x="238.5" y="6" width="123" height="30"/>
                                                     <color key="backgroundColor" red="0.61960786581039429" green="0.91764712333679199" blue="0.83137261867523193" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal">
@@ -312,10 +283,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="CJj-fg-tBJ" id="cva-Eh-GxK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r25-jZ-qGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="150"/>
+            <point key="canvasLocation" x="781" y="150"/>
         </scene>
         <!--Popover Presentation Controller-->
         <scene sceneID="Pvn-5f-j7L">

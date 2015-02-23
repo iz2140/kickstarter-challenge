@@ -10,6 +10,7 @@
 
 @interface DetailViewController ()
 
+
 @end
 
 @implementation DetailViewController
@@ -22,6 +23,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.tableView.rowHeight = 44;
+    
+    if (!_projectName) {
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,15 +38,25 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
+    if (section == 0)
+        return 5;
+    else if (section == 1)
+        return 3;
+    else if (section == 2)
+        return 1;
     // Return the number of rows in the section.
     return 0;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;
 }
 
 /*

@@ -96,6 +96,7 @@
 }
 
 //generic method used to retrieve array of info for listView -- exception may occur if given wrong argument
+//does not guarantee type safety of returned objects in array
 -(NSArray *) arrayforListViewForInfo: (NSString *) key {
     NSMutableArray *array = [[NSMutableArray alloc] init];
     @try {
