@@ -50,19 +50,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-//    NSDictionary *data = [[LCData sharedData] getData];
-//    
-//    NSArray *temp = [data objectForKey:@"projects"];
-//    
-//    NSDictionary *firstobj = [temp objectAtIndex:0];
-//    
-//    for (NSDictionary *project in temp ){
-//        NSLog( @"%@", [project objectForKey: @"name"]);
-//    }
-//    
-//    NSString* projname = [firstobj objectForKey: @"name"];
-//    
-//    NSLog(@"%@", projname);
+
 //    self.tableView.estimatedRowHeight = 68.0;
 //    self.tableView.rowHeight = UITableViewAutomaticDimension;
 

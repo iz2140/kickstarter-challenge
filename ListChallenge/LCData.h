@@ -16,10 +16,12 @@
 @property (strong, nonatomic, readonly) NSString *databaseName;
 @property (nonatomic, strong, getter=getData) NSDictionary *data;
 
-//only access singleton. Do not create any new instances of LCData
-+(LCData *)sharedData;
--(NSArray *) projectNamesforListView;
--(NSArray *) locationsforListView;
++(LCData *)sharedData; //only access singleton. Do not create any new instances of LCData
+//-(NSArray *) projectNamesforListView;
+//-(NSArray *) locationsforListView;
 -(NSArray *) arrayforListViewForInfo: (NSString *) key;
+-(NSDictionary *) dataForSlug: (NSString *) slug;
+-(id) getInfoForProjectEntry: (NSDictionary *)entry infoKey: (NSString *) infoKey;
+-(NSDictionary *) getSubDictionaryForProjectEntry: (NSDictionary *) entry dicKey: (NSString *)dicKey;
 
 @end

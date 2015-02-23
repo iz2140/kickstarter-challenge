@@ -10,6 +10,7 @@
 		034359FB1A97CD4000696598 /* projectdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 034359FA1A97CD4000696598 /* projectdata.json */; };
 		034359FF1A97CD9D00696598 /* LCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 034359FE1A97CD9D00696598 /* LCData.m */; };
 		0375F21B1A9A7C090090165C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0375F21A1A9A7C090090165C /* DetailViewController.m */; };
+		0375F21E1A9AF4000090165C /* PledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0375F21D1A9AF4000090165C /* PledgeViewController.m */; };
 		039E9D911A993E0F00E1B50C /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 039E9D901A993E0F00E1B50C /* CustomTableViewCell.m */; };
 		03CD5EFD1A9183E300EE3FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD5EFC1A9183E300EE3FBD /* main.m */; };
 		03CD5F001A9183E300EE3FBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD5EFF1A9183E300EE3FBD /* AppDelegate.m */; };
@@ -37,6 +38,8 @@
 		03435A001A97D05A00696598 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0375F2191A9A7C090090165C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		0375F21A1A9A7C090090165C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		0375F21C1A9AF4000090165C /* PledgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PledgeViewController.h; sourceTree = "<group>"; };
+		0375F21D1A9AF4000090165C /* PledgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PledgeViewController.m; sourceTree = "<group>"; };
 		039E9D8F1A993E0F00E1B50C /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		039E9D901A993E0F00E1B50C /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		03CD5EF71A9183E300EE3FBD /* ListChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +92,8 @@
 				039E9D901A993E0F00E1B50C /* CustomTableViewCell.m */,
 				0375F2191A9A7C090090165C /* DetailViewController.h */,
 				0375F21A1A9A7C090090165C /* DetailViewController.m */,
+				0375F21C1A9AF4000090165C /* PledgeViewController.h */,
+				0375F21D1A9AF4000090165C /* PledgeViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			files = (
 				034359FF1A97CD9D00696598 /* LCData.m in Sources */,
 				03CD5F031A9183E300EE3FBD /* ViewController.m in Sources */,
+				0375F21E1A9AF4000090165C /* PledgeViewController.m in Sources */,
 				03CD5F001A9183E300EE3FBD /* AppDelegate.m in Sources */,
 				039E9D911A993E0F00E1B50C /* CustomTableViewCell.m in Sources */,
 				03CD5EFD1A9183E300EE3FBD /* main.m in Sources */,

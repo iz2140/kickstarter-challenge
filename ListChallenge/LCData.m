@@ -61,7 +61,7 @@
     id temp;
     if (!entry) {
         NSLog(@"Entry does not exist.");
-        exit(1);
+        exit(0);
     }
     temp = [entry objectForKey: infoKey];
     return temp;
@@ -72,13 +72,13 @@
     id temp;
     if (!entry) {
         NSLog(@"Entry does not exist.");
-        exit(1);
+        exit(0);
     }
     
     temp = [entry objectForKey: dicKey];
     if (![temp isKindOfClass: [NSDictionary class]]) {
         NSLog(@"Entry is not of type NSDictionary.");
-        exit(1);
+        exit(0);
     }
     return temp;
 }

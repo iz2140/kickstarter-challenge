@@ -7,9 +7,11 @@
 //
 
 #import "DetailViewController.h"
+#import "LCData.h"
 
 @interface DetailViewController ()
 
+@property (strong,nonatomic) NSDictionary *details;
 
 @end
 
@@ -24,10 +26,43 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.tableView.rowHeight = 44;
+    self.tableView.rowHeight = 44; //necessary to suppress warning
     
-    if (!_projectName) {
+    @try {
+        NSDictionary *details = [[LCData sharedData] dataForSlug:self.pSlug];
+        _details = details;
+        
+        
+        self.projectName.text = [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"name"]];
+        
+        self.pledged.text = [NSString stringWithFormat:@"%@%@ pledged",
+                             [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"currency_symbol"]],
+                             [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"pledged"]]];
+        
+        
+        //NSNumber *funded = (NSNumber *)[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"pledged"] / (NSNumber *)[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"goal"];
+        
+        self.backers.text = [NSString stringWithFormat:@"%@ backed",
+                             [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"backers_count"]]];
+        
+        NSDictionary *creator = [[LCData sharedData] getSubDictionaryForProjectEntry:self.details dicKey:@"creator"];
+        
+        self.creator.text = [NSString stringWithFormat:@"Created by %@",
+                             [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: creator infoKey:@"name"]]];
+        
+        NSDictionary *location = [[LCData sharedData] getSubDictionaryForProjectEntry:self.details dicKey:@"location"];
+        
+        self.location.text = [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: location infoKey:@"displayable_name"]];
+        
+        self.blurb.text = [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: location infoKey:@"blurb"]];
+        
+        NSLog(@"blurb: %@",[self getStringForData:[[LCData sharedData] getInfoForProjectEntry: location infoKey:@"blurb"]]);
+        
+    }@catch(NSException *e){
+        NSLog(@"exception thrown in method arrayForListViewForInfo; %@ %@", [e name], [e reason]);
     }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,6 +93,21 @@
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44;
 }
+
+//helper method to verify that data retrieved from details is a string, and if not, convert it
+- (NSString *) getStringForData: (id)data {
+    if (![data isKindOfClass:[NSString class]]){
+        if ([data isKindOfClass:[NSNumber class]]){
+            NSLog(@"converting string from %@", data);
+            
+            NSString *temp =[data stringValue];
+            NSLog(@"returning %@", temp);
+            return temp;
+        }
+    }
+    return data;
+}
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -103,7 +153,7 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -111,6 +161,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
