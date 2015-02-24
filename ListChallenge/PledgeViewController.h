@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PledgeViewController : UIViewController <UITextFieldDelegate>
+@interface PledgeViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *pledgeAmount;
 @property (weak, nonatomic) IBOutlet UITextField *backerName;
 @property (weak, nonatomic) IBOutlet UITextField *ccNumber;
