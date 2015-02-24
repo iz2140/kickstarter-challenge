@@ -17,7 +17,8 @@
 @property (strong, nonatomic) NSString* tempMonth;
 @property (strong, nonatomic) NSString* tempYear;
 
-@property (strong, nonatomic) NSMutableString* alertMsg;
+@property (strong, nonatomic) NSMutableString* errorMsg;
+@property BOOL errorExists;
 
 @end
 
@@ -59,8 +60,6 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     
-    NSLog(@"whaat");
-    
     if ([textField.accessibilityLabel isEqualToString:@"name"]) {
         _tempBacker = textField.text;
     }
@@ -85,18 +84,37 @@
 
 - (IBAction)submit:(id)sender {
     
-    NSLog(@"%@ pledged %@ to the project. their cc number is %@.", self.tempBacker, self.tempPledge, self.tempCcNum);
+    //NSLog(@"%@ pledged %@ to the project. their cc number is %@.", self.tempBacker, self.tempPledge, self.tempCcNum);
+    if (![self pledgeCheck:self.tempPledge]){
+        [self updateErrorMsg:@"Pledge not value between 1 and 10000."];
+    }
     
-#pragma mark TODO - add all checks
-    if (!([self pledgeCheck:self.tempPledge] &&
-          [self luhnCheck:self.tempCcNum] &&
-          [self dateCheckWithMonth:self.tempMonth Year:self.tempYear])){
-        
+    if (![self stringNotEmpty:self.tempBacker]){
+        [self updateErrorMsg:@"Name empty."];
+    }
+    
+    if (![self luhnCheck:self.tempCcNum]){
+        [self updateErrorMsg:@"Credit card number invalid."];
+    }
+    
+    if (![self stringNotEmpty:self.tempSCode]){
+        [self updateErrorMsg:@"Security code empty."];
+    }
+    
+    if (![self dateCheckWithMonth:self.tempMonth Year:self.tempYear]) {
+        [self updateErrorMsg:@"Credit card expired."];
+    }
+          
+    if (self.errorExists){
         NSLog(@"sending alert");
-    
+        //NSString *finalmsg = [self.errorMsg stringByAppendingString:@"Please fix the following errors:"];
+        [self showUIAlertWithMsg:self.errorMsg];
+    } else {
+        [self showUIAlertWithMsg:@"Congrats on contributing to an amazing Kickstarter project!"];
     }
     
 }
+
 
 -(BOOL) dateCheckWithMonth: (NSString *) mm Year: (NSString *)yyyy {
     if (([mm length] == 0) || ([yyyy length] == 0))  {
@@ -117,11 +135,10 @@
     NSDate *today = [NSDate date];
     
     return [exp laterDate:today] == exp;
-    
 }
 
--(BOOL) stringEmpty: (NSString*) string {
-   return [string length] == 0;
+-(BOOL) stringNotEmpty: (NSString*) string {
+   return !([string length] == 0);
 }
 
 -(BOOL) luhnCheck: (NSString*) str {
@@ -160,22 +177,23 @@
     return (pledge >= 1 && pledge <= 10000);
 }
 
--(NSMutableString *)alertMsg{
-    if (!_alertMsg) {
-        _alertMsg = [[NSMutableString alloc]init];
-        [_alertMsg stringByAppendingString:@"Please fix the following errors:"];
+-(NSMutableString *)errorMsg{
+    if (!_errorMsg) {
+        NSLog(@"hrm...");
+        _errorMsg = [[NSMutableString alloc]init];
+        [self.errorMsg appendString: @"Please fix errors in your form:"];
     }
-    return _alertMsg;
+    return _errorMsg;
 }
 
--(void)updateAlertMsg: (NSString *) alert {
-    [self.alertMsg stringByAppendingString:alert];
+-(void)updateErrorMsg: (NSString *) str {
+    self.errorExists=YES;
+    [self.errorMsg appendFormat: @"\n%@", str];
 }
 
-#pragma mark TBD - change to iOS 8 configs
--(void)showUIAlert{
-    UIAlertView *removeSuccessFulAlert=[[UIAlertView alloc]initWithTitle:@"Form Submission Error" message:self.alertMsg delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
-    [removeSuccessFulAlert show];
+-(void)showUIAlertWithMsg: (NSString *) msg{
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Form Submission"  message:msg preferredStyle:UIAlertControllerStyleAlert];
     
+    [self presentViewController:alert animated:YES completion:nil];
 }
 @end
