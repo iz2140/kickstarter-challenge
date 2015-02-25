@@ -54,7 +54,7 @@
         
         self.location.text = [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: location infoKey:@"displayable_name"]];
         
-        self.blurb.text = [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: location infoKey:@"blurb"]];
+        self.blurb.text = [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"blurb"]];
         
         NSLog(@"blurb: %@",[self getStringForData:[[LCData sharedData] getInfoForProjectEntry: location infoKey:@"blurb"]]);
         

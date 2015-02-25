@@ -8,6 +8,7 @@
 
 #import "PledgeViewController.h"
 #import "Constants.h"
+#import "DetailViewModel.h"
 
 @interface PledgeViewController ()
 
@@ -19,6 +20,11 @@
 @property (strong, nonatomic) NSString* tempYear;
 
 @property (strong, nonatomic) NSMutableString* errorMsg;
+
+@property (assign) NSNumber *capturePledge;
+
+@property (nonatomic, retain) DetailViewModel *viewModel;
+
 @property BOOL errorExists;
 
 @end
@@ -28,6 +34,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //self.viewModel = [[DetailViewModel init] alloc];
+    
     
     //set UITextFieldDelegate for all textfields to self
     self.pledgeAmount.delegate = self;
@@ -103,7 +112,7 @@
     }
     
     if (![self dateCheckWithMonth:self.tempMonth Year:self.tempYear]) {
-        [self updateErrorMsg:@"Credit card expired."];
+        [self updateErrorMsg:@"Credit card expiration date invalid."];
     }
           
     if (self.errorExists){
@@ -111,6 +120,18 @@
         [self showUIAlertWithMsg:self.errorMsg];
     } else {
         [self showUIAlertWithMsg:@"Congrats on contributing to an amazing Kickstarter project!"];
+        
+//        [RACObserve(self, capturePledge) subscribeNext:^(NSNumber *newPledge) {
+//            NSLog(@"You just pledged %@", newPledge);
+//        }];
+        self.pledgeAmount.text = nil;
+        self.backerName.text = nil;
+        self.ccNumber.text = nil;
+        self.secCode.text = nil;
+        self.expMonth.text = nil;
+        self.expYear.text = nil;
+//
+        
     }
     
 }
@@ -179,6 +200,7 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterNoStyle;
     NSNumber *pledge = [formatter numberFromString: str];
+    _capturePledge = pledge;
     
     return ([pledge intValue] >= kMinPledge && [pledge intValue] <= kMaxPledge);
 }

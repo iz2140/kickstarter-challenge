@@ -7,7 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface ViewModel : NSObject
+
+@interface DetailViewModel : NSObject
+
+//initial values
+@property (nonatomic, assign) NSString *projectName;
+@property (nonatomic, assign) NSString *currency;
+@property(nonatomic, assign) NSInteger pledged;
+@property(nonatomic, assign) NSInteger backers;
+@property(nonatomic, assign) NSInteger goal;
+@property (nonatomic, assign) NSString *creator;
+@property (nonatomic, assign) NSString *location;
+@property (nonatomic, assign) NSString *blurb;
+
+//updated streams
+//@property(nonatomic, readonly) NSNumber *percentFunded;
+-(RACSignal *) pledgedUpdateSignal;
+-(RACSignal *) backersUpdateSignal;
+-(RACSignal *) fundedUpdateSignal;
 
 @end
