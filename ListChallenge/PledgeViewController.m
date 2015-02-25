@@ -37,12 +37,18 @@
     self.expMonth.delegate = self;
     self.expYear.delegate = self;
     
+    NSLog(@"I am receiving %@", self.projectName.text);
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//- (void) initProjectName:(NSString *) projectName{
+//    self.projectName.text = projectName;
+//}
 
 //tapping anywhere but a UITextField resigns first responder
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -103,7 +109,7 @@
     }
     
     if (![self dateCheckWithMonth:self.tempMonth Year:self.tempYear]) {
-        [self updateErrorMsg:@"Credit card expired."];
+        [self updateErrorMsg:@"Card expiration invalid."];
     }
           
     if (self.errorExists){
@@ -111,10 +117,15 @@
         [self showUIAlertWithMsg:self.errorMsg];
     } else {
         [self showUIAlertWithMsg:@"Congrats on contributing to an amazing Kickstarter project!"];
+        self.pledgeAmount.text = nil;
+        self.backerName.text = nil;
+        self.ccNumber.text = nil;
+        self.secCode.text = nil;
+        self.expMonth.text = nil;
+        self.expYear.text = nil;
     }
     
 }
-
 
 -(BOOL) dateCheckWithMonth: (NSString *) mm Year: (NSString *)yyyy {
     if (([mm length] == 0) || ([yyyy length] == 0))  {

@@ -14,7 +14,7 @@
 		039E9D911A993E0F00E1B50C /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 039E9D901A993E0F00E1B50C /* CustomTableViewCell.m */; };
 		03CD5EFD1A9183E300EE3FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD5EFC1A9183E300EE3FBD /* main.m */; };
 		03CD5F001A9183E300EE3FBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD5EFF1A9183E300EE3FBD /* AppDelegate.m */; };
-		03CD5F031A9183E300EE3FBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD5F021A9183E300EE3FBD /* ViewController.m */; };
+		03CD5F031A9183E300EE3FBD /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD5F021A9183E300EE3FBD /* ListViewController.m */; };
 		03CD5F061A9183E300EE3FBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD5F041A9183E300EE3FBD /* Main.storyboard */; };
 		03CD5F081A9183E300EE3FBD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CD5F071A9183E300EE3FBD /* Images.xcassets */; };
 		03CD5F0B1A9183E300EE3FBD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03CD5F091A9183E300EE3FBD /* LaunchScreen.xib */; };
@@ -47,8 +47,8 @@
 		03CD5EFC1A9183E300EE3FBD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		03CD5EFE1A9183E300EE3FBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		03CD5EFF1A9183E300EE3FBD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		03CD5F011A9183E300EE3FBD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		03CD5F021A9183E300EE3FBD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		03CD5F011A9183E300EE3FBD /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		03CD5F021A9183E300EE3FBD /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		03CD5F051A9183E300EE3FBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03CD5F071A9183E300EE3FBD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		03CD5F0A1A9183E300EE3FBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -85,23 +85,20 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		0375F2151A9A7B8E0090165C /* View */ = {
+		0375F2151A9A7B8E0090165C /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				039E9D8F1A993E0F00E1B50C /* CustomTableViewCell.h */,
 				039E9D901A993E0F00E1B50C /* CustomTableViewCell.m */,
-				0375F2191A9A7C090090165C /* DetailViewController.h */,
-				0375F21A1A9A7C090090165C /* DetailViewController.m */,
-				0375F21C1A9AF4000090165C /* PledgeViewController.h */,
-				0375F21D1A9AF4000090165C /* PledgeViewController.m */,
 			);
-			name = View;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		03CD5EEE1A9183E300EE3FBD = {
 			isa = PBXGroup;
 			children = (
 				03CD5EF91A9183E300EE3FBD /* ListChallenge */,
+				03CD5EFA1A9183E300EE3FBD /* Supporting Files */,
 				03CD5F131A9183E400EE3FBD /* ListChallengeTests */,
 				03CD5EF81A9183E300EE3FBD /* Products */,
 			);
@@ -119,16 +116,15 @@
 		03CD5EF91A9183E300EE3FBD /* ListChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				03CD5EFE1A9183E300EE3FBD /* AppDelegate.h */,
-				03CD5EFF1A9183E300EE3FBD /* AppDelegate.m */,
-				03CD5F011A9183E300EE3FBD /* ViewController.h */,
-				03CD5F021A9183E300EE3FBD /* ViewController.m */,
+				03CD5F011A9183E300EE3FBD /* ListViewController.h */,
+				03CD5F021A9183E300EE3FBD /* ListViewController.m */,
+				0375F2191A9A7C090090165C /* DetailViewController.h */,
+				0375F21A1A9A7C090090165C /* DetailViewController.m */,
+				0375F21C1A9AF4000090165C /* PledgeViewController.h */,
+				0375F21D1A9AF4000090165C /* PledgeViewController.m */,
 				03CD5F041A9183E300EE3FBD /* Main.storyboard */,
-				03CD5F071A9183E300EE3FBD /* Images.xcassets */,
-				03CD5F091A9183E300EE3FBD /* LaunchScreen.xib */,
 				034359FC1A97CD4A00696598 /* Model */,
-				03CD5EFA1A9183E300EE3FBD /* Supporting Files */,
-				0375F2151A9A7B8E0090165C /* View */,
+				0375F2151A9A7B8E0090165C /* Views */,
 			);
 			path = ListChallenge;
 			sourceTree = "<group>";
@@ -136,11 +132,16 @@
 		03CD5EFA1A9183E300EE3FBD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03CD5F071A9183E300EE3FBD /* Images.xcassets */,
+				03CD5F091A9183E300EE3FBD /* LaunchScreen.xib */,
+				03CD5EFE1A9183E300EE3FBD /* AppDelegate.h */,
+				03CD5EFF1A9183E300EE3FBD /* AppDelegate.m */,
 				03CD5EFB1A9183E300EE3FBD /* Info.plist */,
 				03CD5EFC1A9183E300EE3FBD /* main.m */,
 				03435A001A97D05A00696598 /* Constants.h */,
 			);
 			name = "Supporting Files";
+			path = ListChallenge;
 			sourceTree = "<group>";
 		};
 		03CD5F131A9183E400EE3FBD /* ListChallengeTests */ = {
@@ -262,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				034359FF1A97CD9D00696598 /* LCData.m in Sources */,
-				03CD5F031A9183E300EE3FBD /* ViewController.m in Sources */,
+				03CD5F031A9183E300EE3FBD /* ListViewController.m in Sources */,
 				0375F21E1A9AF4000090165C /* PledgeViewController.m in Sources */,
 				03CD5F001A9183E300EE3FBD /* AppDelegate.m in Sources */,
 				039E9D911A993E0F00E1B50C /* CustomTableViewCell.m in Sources */,

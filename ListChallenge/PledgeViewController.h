@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface PledgeViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UILabel *projectName;
 @property (weak, nonatomic) IBOutlet UITextField *pledgeAmount;
 @property (weak, nonatomic) IBOutlet UITextField *backerName;
 @property (weak, nonatomic) IBOutlet UITextField *ccNumber;
@@ -16,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *expMonth;
 @property (weak, nonatomic) IBOutlet UITextField *expYear;
 - (IBAction)submit:(id)sender;
+//- (void) initProjectName:(NSString *)projectName;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "LCData.h"
+#import "PledgeViewController.h"
 
 @interface DetailViewController ()
 
@@ -40,7 +41,11 @@
                              [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"pledged"]]];
         
 #pragma mark - TO DO: get rid of or finish this
-        //NSNumber *funded = (NSNumber *)[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"pledged"] / (NSNumber *)[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"goal"];
+        self.funded.text = [NSString stringWithFormat:@"%@ funded",
+                            [self getPercentFunded: [[[LCData sharedData] getInfoForProjectEntry:
+                              self.details infoKey:@"pledged"] doubleValue]
+                                              Goal: [[[LCData sharedData] getInfoForProjectEntry:
+                              self.details infoKey:@"goal"] doubleValue]]];
         
         self.backers.text = [NSString stringWithFormat:@"%@ backed",
                              [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"backers_count"]]];
@@ -54,12 +59,11 @@
         
         self.location.text = [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: location infoKey:@"displayable_name"]];
         
-        self.blurb.text = [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: location infoKey:@"blurb"]];
+        self.blurb.text = [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"blurb"]];
         
-        NSLog(@"blurb: %@",[self getStringForData:[[LCData sharedData] getInfoForProjectEntry: location infoKey:@"blurb"]]);
         
     }@catch(NSException *e){
-        NSLog(@"exception thrown in method arrayForListViewForInfo; %@ %@", [e name], [e reason]);
+        NSLog(@"exception thrown in method viewDidLoad in DetailViewController; %@ %@", [e name], [e reason]);
     }
     
     
@@ -98,16 +102,26 @@
 - (NSString *) getStringForData: (id)data {
     if (![data isKindOfClass:[NSString class]]){
         if ([data isKindOfClass:[NSNumber class]]){
-            NSLog(@"converting string from %@", data);
+            //NSLog(@"converting string from %@", data);
             
             NSString *temp =[data stringValue];
-            NSLog(@"returning %@", temp);
+            //NSLog(@"returning %@", temp);
             return temp;
-        }
+        } else
+            return nil;
     }
     return data;
 }
 
+-(NSString *) getPercentFunded: (double) pledged Goal: (double) goal {
+    double percent = pledged/goal;
+    NSLog(@"pledged - %ld", (long)pledged);
+    NSLog(@"goal - %ld", (long)goal);
+    NSLog(@"percent - %f", percent);
+    NSString *str = [NSNumberFormatter localizedStringFromNumber:[NSNumber numberWithDouble:percent] numberStyle:NSNumberFormatterPercentStyle];
+    NSLog(@"percent funded: %@", str);
+    return str;
+}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -156,10 +170,19 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString: @"Submit Pledge"]) { //text is potentially unsafe, just checks that we are using the right segue
+        if ([segue.destinationViewController isKindOfClass: [PledgeViewController class]]) { //check that our destination is the PledgeViewController
+
+            NSString *projectName = self.projectName.text;
+            PledgeViewController *temp = segue.destinationViewController;
+            NSLog(@"I am sending %@", projectName);
+            temp.projectName.text=projectName;
+        }
+        
+    }
+
 }
 
 

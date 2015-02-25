@@ -17,10 +17,8 @@
 @property (nonatomic, strong, getter=getData) NSDictionary *data;
 
 +(LCData *)sharedData; //only access singleton. Do not create any new instances of LCData
-//-(NSArray *) projectNamesforListView;
-//-(NSArray *) locationsforListView;
--(NSArray *) arrayforListViewForInfo: (NSString *) key;
--(NSDictionary *) dataForSlug: (NSString *) slug;
+-(NSArray *) arrayforListViewForInfo: (NSString *) key; //used in ListView
+-(NSDictionary *) dataForSlug: (NSString *) slug; //used in DetailView
 -(id) getInfoForProjectEntry: (NSDictionary *)entry infoKey: (NSString *) infoKey;
 -(NSDictionary *) getSubDictionaryForProjectEntry: (NSDictionary *) entry dicKey: (NSString *)dicKey;
 

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Kickstarter. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ListViewController.h"
 
 //model
 #import "LCData.h"
@@ -15,7 +15,7 @@
 #import "CustomTableViewCell.h"
 #import "DetailViewController.h"
 
-@interface ViewController ()
+@interface ListViewController ()
 
 
 @property (nonatomic, strong) NSArray *projectNames; //Project names to display for ListView
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation ViewController: UIViewController
+@implementation ListViewController: UIViewController
 
 
 - (void)viewDidLoad {
@@ -90,7 +90,6 @@
             //NSLog(@"pSlug being sent is %@", pSlug);
             [segue.destinationViewController setPSlug:pSlug];
         }
-        
     }
 }
 
