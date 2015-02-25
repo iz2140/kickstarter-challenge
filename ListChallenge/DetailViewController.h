@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailViewModel.h"
 
 @interface DetailViewController : UITableViewController
 
@@ -20,4 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *location;
 @property (weak, nonatomic) IBOutlet UILabel *blurb;
 @property (weak, nonatomic) IBOutlet UIImage *image;
+
+@property (strong, nonatomic) DetailViewModel *viewModel;
+
 @end

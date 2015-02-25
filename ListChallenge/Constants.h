@@ -9,6 +9,13 @@
 #ifndef ListChallenge_Constants_h
 #define ListChallenge_Constants_h
 
+//date stuff
+#define kJan 1
+#define kDec 12
+#define kCurrYear 2015
 
+//pledge stuff
+#define kMinPledge 1
+#define kMaxPledge 10000
 
 #endif

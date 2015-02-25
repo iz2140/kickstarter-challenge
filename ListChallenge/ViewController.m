@@ -7,7 +7,11 @@
 //
 
 #import "ViewController.h"
+
+//model
 #import "LCData.h"
+
+//views
 #import "CustomTableViewCell.h"
 #import "DetailViewController.h"
 
@@ -23,36 +27,10 @@
 
 @implementation ViewController: UIViewController
 
-//add stuff to send model info to DetailViewController here
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    if ([segue.identifier isEqualToString: @"Prepare Detail"]) { //text is potentially unsafe, just checks that we are using the right segue
-        
-
-        if ([segue.destinationViewController isKindOfClass: [DetailViewController class]]) { //check that our destination is the DetailViewController
-            
-            NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-            NSString *pSlug = [self pslugForIndexPath:path];
-            //NSLog(@"pSlug being sent is %@", pSlug);
-            [segue.destinationViewController setPSlug:pSlug];
-        }
-        
-    }
-}
-
--(NSString *) pslugForIndexPath: (NSIndexPath *) path {
-    if (!([self.pSlugs count] == 0) )
-        return [self.pSlugs objectAtIndex:path.row];
-    return nil;
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
-//    self.tableView.estimatedRowHeight = 68.0;
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
 
     
     NSArray *projectNames = [[LCData sharedData] arrayforListViewForInfo: @"name"];
@@ -62,7 +40,8 @@
     NSArray *locations = [[LCData sharedData] arrayforListViewForInfo: @"country"];
     if (locations && [[locations firstObject] isKindOfClass:[NSString class]]) //check that array is not null and that they consist of string objects
         _locations = locations;
-    
+
+#pragma mark - TO DO: unifinished...
     NSArray *pledges = [[LCData sharedData] arrayforListViewForInfo: @"pledged"];
     if (pledges && [[pledges firstObject] isKindOfClass:[NSString class]]){
         NSLog(@"hi");
@@ -100,4 +79,26 @@
     
     return cell;
 }
+
+//add stuff to send model info to DetailViewController here
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString: @"Prepare Detail"]) { //text is potentially unsafe, just checks that we are using the right segue
+        if ([segue.destinationViewController isKindOfClass: [DetailViewController class]]) { //check that our destination is the DetailViewController
+            NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+            NSString *pSlug = [self pslugForIndexPath:path];
+            //NSLog(@"pSlug being sent is %@", pSlug);
+            [segue.destinationViewController setPSlug:pSlug];
+        }
+        
+    }
+}
+
+//get the pslug for a project cell
+-(NSString *) pslugForIndexPath: (NSIndexPath *) path {
+    if (!([self.pSlugs count] == 0) )
+        return [self.pSlugs objectAtIndex:path.row];
+    return nil;
+}
+
 @end

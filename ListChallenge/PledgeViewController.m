@@ -7,6 +7,7 @@
 //
 
 #import "PledgeViewController.h"
+#import "Constants.h"
 
 @interface PledgeViewController ()
 
@@ -86,7 +87,7 @@
     
     //NSLog(@"%@ pledged %@ to the project. their cc number is %@.", self.tempBacker, self.tempPledge, self.tempCcNum);
     if (![self pledgeCheck:self.tempPledge]){
-        [self updateErrorMsg:@"Pledge not value between 1 and 10000."];
+        [self updateErrorMsg:@"Pledge value must be between 1 and 10000."];
     }
     
     if (![self stringNotEmpty:self.tempBacker]){
@@ -107,7 +108,6 @@
           
     if (self.errorExists){
         NSLog(@"sending alert");
-        //NSString *finalmsg = [self.errorMsg stringByAppendingString:@"Please fix the following errors:"];
         [self showUIAlertWithMsg:self.errorMsg];
     } else {
         [self showUIAlertWithMsg:@"Congrats on contributing to an amazing Kickstarter project!"];
@@ -123,7 +123,10 @@
     NSInteger month = [mm intValue];
     NSInteger year = [yyyy intValue];
     
-    if ( month < 1 || month > 12 || year < 2015 || year > 9999 )
+    if (!(month && year))
+        return false;
+    
+    if ( month < kJan || month > kDec || year < kCurrYear )
         return false;
     
     NSDateComponents *comps = [[NSDateComponents alloc] init];
@@ -160,7 +163,7 @@
         }
         if (i % 2 == 0){ //for every odd number, multiply by 2
             num *= 2;
-            if ( num > 9) //if greater than 9, then sum the two digits
+            if (num > 9) //if greater than 9, then sum the two digits
                 num -= 9;
         }
         sum += num;
@@ -173,13 +176,15 @@
         
         return false;
     }
-    NSInteger pledge = [str intValue];
-    return (pledge >= 1 && pledge <= 10000);
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterNoStyle;
+    NSNumber *pledge = [formatter numberFromString: str];
+    
+    return ([pledge intValue] >= kMinPledge && [pledge intValue] <= kMaxPledge);
 }
 
 -(NSMutableString *)errorMsg{
     if (!_errorMsg) {
-        NSLog(@"hrm...");
         _errorMsg = [[NSMutableString alloc]init];
         [self.errorMsg appendString: @"Please fix errors in your form:"];
     }
@@ -194,6 +199,14 @@
 -(void)showUIAlertWithMsg: (NSString *) msg{
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Form Submission"  message:msg preferredStyle:UIAlertControllerStyleAlert];
     
-    [self presentViewController:alert animated:YES completion:nil];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }];
+    
+    [alert addAction:defaultAction];
+    //upon showing the error Alert, should nil out the errorMsg and return errorExists state to default (NO)
+    [self presentViewController:alert animated:YES completion:^(void){
+        self.errorMsg = nil;
+        self.errorExists = NO;
+    }];
 }
 @end

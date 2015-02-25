@@ -39,7 +39,7 @@
                              [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"currency_symbol"]],
                              [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"pledged"]]];
         
-        
+#pragma mark - TO DO: get rid of or finish this
         //NSNumber *funded = (NSNumber *)[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"pledged"] / (NSNumber *)[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"goal"];
         
         self.backers.text = [NSString stringWithFormat:@"%@ backed",
