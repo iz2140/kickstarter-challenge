@@ -90,8 +90,6 @@
 
 
 - (IBAction)submit:(id)sender {
-    
-    //NSLog(@"%@ pledged %@ to the project. their cc number is %@.", self.tempBacker, self.tempPledge, self.tempCcNum);
     if (![self pledgeCheck:self.tempPledge]){
         [self updateErrorMsg:@"Pledge value must be between 1 and 10000."];
     }
@@ -167,7 +165,7 @@
     NSInteger sum = 0;
     //parse the string in reverse
     for (int i = len-1; i >= 0; i--){
-        NSInteger num = buffer[i] - '0'; //convert to numbers
+        NSInteger num = buffer[i] - '0'; //convert to numbers using ASCII representation of unichar codes
         if (num < 0 || num > 9){
             NSLog(@"ccNum not valid numbers");
             return false;

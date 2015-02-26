@@ -41,7 +41,6 @@
     if (locations && [[locations firstObject] isKindOfClass:[NSString class]]) //check that array is not null and that they consist of string objects
         _locations = locations;
 
-#pragma mark - TO DO: unifinished...
     NSArray *pledges = [[LCData sharedData] arrayforListViewForInfo: @"pledged"];
     if (pledges && [[pledges firstObject] isKindOfClass:[NSString class]]){
         NSLog(@"hi");

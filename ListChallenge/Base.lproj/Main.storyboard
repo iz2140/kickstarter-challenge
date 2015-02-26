@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="x2D-Gh-eck">
-                                <rect key="frame" x="0.0" y="44" width="600" height="569"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="x2D-Gh-eck">
+                                <rect key="frame" x="0.0" y="64" width="600" height="472"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
@@ -30,31 +30,25 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1qP-Q7-cuO" id="qAl-rO-AJq">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="-1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Project Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jho-Ec-vca">
-                                                    <rect key="frame" x="15" y="8" width="248" height="16"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="16" id="6OI-Hb-fVR"/>
-                                                        <constraint firstAttribute="width" constant="248" id="xy6-0V-irg"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="-1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" text="Project Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jho-Ec-vca">
+                                                    <rect key="frame" x="241" y="22" width="79" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City, State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUB-a5-ndr">
-                                                    <rect key="frame" x="15" y="31" width="537" height="58"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUB-a5-ndr">
+                                                    <rect key="frame" x="253.5" y="51" width="54.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Jho-Ec-vca" firstAttribute="top" secondItem="qAl-rO-AJq" secondAttribute="topMargin" id="NCb-ka-BZG"/>
-                                                <constraint firstItem="Jho-Ec-vca" firstAttribute="leading" secondItem="UUB-a5-ndr" secondAttribute="leading" id="Qnc-Kx-I5g"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="UUB-a5-ndr" secondAttribute="trailing" constant="7" id="RgO-1y-HRe"/>
-                                                <constraint firstItem="UUB-a5-ndr" firstAttribute="top" secondItem="Jho-Ec-vca" secondAttribute="bottom" constant="7" id="dvp-bO-fqC"/>
-                                                <constraint firstItem="UUB-a5-ndr" firstAttribute="leading" secondItem="qAl-rO-AJq" secondAttribute="leadingMargin" constant="7" id="gPB-Mc-iex"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="UUB-a5-ndr" secondAttribute="bottom" constant="2.5" id="qqb-oL-dfW"/>
+                                                <constraint firstAttribute="centerX" secondItem="UUB-a5-ndr" secondAttribute="centerX" id="486-xD-7zl"/>
+                                                <constraint firstItem="UUB-a5-ndr" firstAttribute="top" secondItem="Jho-Ec-vca" secondAttribute="bottom" constant="13.5" id="9tF-hD-U4t"/>
+                                                <constraint firstAttribute="centerX" secondItem="Jho-Ec-vca" secondAttribute="centerX" id="CuE-jU-RJS"/>
+                                                <constraint firstItem="Jho-Ec-vca" firstAttribute="top" secondItem="qAl-rO-AJq" secondAttribute="topMargin" constant="14" id="V4f-0x-KJ3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -71,6 +65,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="x2D-Gh-eck" secondAttribute="centerY" id="3oy-Xk-TAl"/>
+                            <constraint firstItem="x2D-Gh-eck" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7oV-1p-pyE"/>
+                            <constraint firstAttribute="width" secondItem="x2D-Gh-eck" secondAttribute="width" id="oKd-Zk-adO"/>
+                            <constraint firstAttribute="centerX" secondItem="x2D-Gh-eck" secondAttribute="centerX" id="rPn-ZL-9KN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Project List" id="5so-xE-qxZ"/>
                     <connections>
@@ -465,6 +465,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="36G-Bt-73Y"/>
+        <segue reference="fup-ba-JBd"/>
     </inferredMetricsTieBreakers>
 </document>
