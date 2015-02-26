@@ -40,7 +40,6 @@
                              [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"currency_symbol"]],
                              [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"pledged"]]];
         
-#pragma mark - TO DO: get rid of or finish this
         self.funded.text = [NSString stringWithFormat:@"%@ funded",
                             [self getPercentFunded: [[[LCData sharedData] getInfoForProjectEntry:
                               self.details infoKey:@"pledged"] doubleValue]

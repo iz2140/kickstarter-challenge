@@ -37,6 +37,13 @@
     self.expMonth.delegate = self;
     self.expYear.delegate = self;
     
+    //set keyboard types
+    [self.pledgeAmount setKeyboardType: UIKeyboardTypeNumbersAndPunctuation];
+    [self.ccNumber setKeyboardType: UIKeyboardTypeNumbersAndPunctuation];
+    [self.secCode setKeyboardType: UIKeyboardTypeNumberPad];
+    [self.expMonth setKeyboardType: UIKeyboardTypeNumberPad];
+    [self.expYear setKeyboardType: UIKeyboardTypeNumberPad];
+    
     NSLog(@"I am receiving %@", self.projectName.text);
     
 }
@@ -62,6 +69,7 @@
     
     
 }
+
 
 #pragma mark TO DO - change this to use tags
 

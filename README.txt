@@ -1,6 +1,6 @@
 Kickstarter challenge notes
 
-====Design & Architecture===
+====Design & Architecture====
 
 I knew I couldn't rely on SpriteKit to do this project, so I immediately brushed up on my MVC, UIKit and Interface Builder knowledge before beginning. For the Model I made a singleton LCData class which interfaces with the json file provided and gives relevant data structures like arrays and dictionaries to the views. I decided on a single UIView project which I built out to an eventual 3 views: a ListView which was the entry point for my project, a DetailView which showed the details of the project, and a PledgeView which was the submission form. I also included a NavigationController.
 
@@ -9,7 +9,11 @@ The ListView and DetailView are both just UITableViews. I designed custom UITabl
 I had planned on incorporating ReactiveCocoa to show changes to backers, pledge amount, and % funded on the DetailView page upon a successful pledge but this proved too ambitious. In the end the Model/View is never updated again upon a successful pledge so this is the biggest limitation of this project.
 
 
-====Time Breakdown===
+====Build & Targets====
+
+The app is built on iOS8 and uses iOS specific libraries. I tested for simulators iPhone 5 and 6. 
+
+====Time Breakdown====
 
 Total time spent: ~40hrs
 

@@ -55,9 +55,6 @@
     
 }
 
-#pragma mark - TODO
-//need to write helper method in LCData that checks if returned objects are strings, bools, or numbers... have to display as strings.
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
