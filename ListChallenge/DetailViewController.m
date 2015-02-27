@@ -7,12 +7,11 @@
 //
 
 #import "DetailViewController.h"
-#import "LCData.h"
+#import "LCProject.h"
 #import "PledgeViewController.h"
 
 @interface DetailViewController ()
-
-@property (strong,nonatomic) NSDictionary *details;
+@property (strong, nonatomic) LCProject *details;
 
 @end
 
@@ -29,44 +28,29 @@
     
     self.tableView.rowHeight = 44; //necessary to suppress warning
     
-    @try {
-        NSDictionary *details = [[LCData sharedData] dataForSlug:self.pSlug];
-        _details = details;
-        
-        
-        self.projectName.text = [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"name"]];
-        
-        self.pledged.text = [NSString stringWithFormat:@"%@%@ pledged",
-                             [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"currency_symbol"]],
-                             [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"pledged"]]];
-        
-        self.funded.text = [NSString stringWithFormat:@"%@ funded",
-                            [self getPercentFunded: [[[LCData sharedData] getInfoForProjectEntry:
-                              self.details infoKey:@"pledged"] doubleValue]
-                                              Goal: [[[LCData sharedData] getInfoForProjectEntry:
-                              self.details infoKey:@"goal"] doubleValue]]];
-        
-        self.backers.text = [NSString stringWithFormat:@"%@ backed",
-                             [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"backers_count"]]];
-        
-        NSDictionary *creator = [[LCData sharedData] getSubDictionaryForProjectEntry:self.details dicKey:@"creator"];
-        
-        self.creator.text = [NSString stringWithFormat:@"Created by %@",
-                             [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: creator infoKey:@"name"]]];
-        
-        NSDictionary *location = [[LCData sharedData] getSubDictionaryForProjectEntry:self.details dicKey:@"location"];
-        
-        self.location.text = [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: location infoKey:@"displayable_name"]];
-        
-        self.blurb.text = [self getStringForData:[[LCData sharedData] getInfoForProjectEntry: self.details infoKey:@"blurb"]];
-        
-        
-    }@catch(NSException *e){
-        NSLog(@"exception thrown in method viewDidLoad in DetailViewController; %@ %@", [e name], [e reason]);
+    if (!_details) {
+        LCProject *projdetails = [[LCProject alloc] initWithSlug:self.pSlug];
+        _details = projdetails;
     }
+        
+        
+    self.projectName.text = self.details.display_name;
+        
+    self.pledged.text = [self.details.pledge_amount stringValue];
+        
+    self.funded.text = self.details.percent_funded;
+    
+    self.backers.text = [self.details.backers stringValue];
+        
+    self.creator.text = self.details.creator_name;
+    
+    self.location.text = self.details.city_state;
+        
+    self.blurb.text = self.details.blurb;
     
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

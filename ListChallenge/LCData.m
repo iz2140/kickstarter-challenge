@@ -10,7 +10,7 @@
 
 @interface LCData()
 
-@property (nonatomic, strong) NSArray *projects;
+@property (strong, nonatomic) NSArray *projectList;
 
 @end
 
@@ -32,6 +32,7 @@
             NSLog(@"Error parsing JSON");
         }else if ([JSONObject isKindOfClass:[NSDictionary class]]) {
             _data = JSONObject;
+            _projectList = [self.data objectForKey: @"projects"];
         }
     }
     return self;
@@ -39,55 +40,18 @@
 
 
 //singleton instance of LCData
-+(LCData *) sharedData {
-    static dispatch_once_t once;
-    static LCData *sharedDatabase = nil;
-    dispatch_once(&once, ^{
-        sharedDatabase = [[LCData alloc] init];
-    });
-    return sharedDatabase;
-}
+//+(LCData *) sharedData {
+//    static dispatch_once_t once;
+//    static LCData *sharedDatabase = nil;
+//    dispatch_once(&once, ^{
+//        sharedDatabase = [[LCData alloc] init];
+//    });
+//    return sharedDatabase;
+//}
 
--(NSArray *) projects {
-    if (!_projects) {
-        _projects = [self.data objectForKey: @"projects"];
-    }
-    return _projects;
-}
-
-//generic method to grab an entry from a dictionary given the dictionary and key
-//type checking and parsing should happen elsewhere
--(id) getInfoForProjectEntry: (NSDictionary *)entry infoKey: (NSString *) infoKey {
-    id temp;
-    if (!entry) {
-        NSLog(@"Entry does not exist.");
-        exit(0);
-    }
-    temp = [entry objectForKey: infoKey];
-    return temp;
-}
-
-//helper method to grab a subdictionary entry from a dictionary given the dictionary and subdictionary key
--(NSDictionary *) getSubDictionaryForProjectEntry: (NSDictionary *) entry dicKey: (NSString *) dicKey {
-    id temp;
-    if (!entry) {
-        NSLog(@"Entry does not exist.");
-        return nil;
-    }
-    
-    temp = [entry objectForKey: dicKey];
-    if (![temp isKindOfClass: [NSDictionary class]]) {
-        NSLog(@"Entry is not of type NSDictionary.");
-        return nil;
-    }
-    return temp;
-}
-
-//helper method to return a project's dictionary entry given its slug
-/* this would probably not be optimal with a large number of entries in the project array */
 -(NSDictionary *) dataForSlug: (NSString *) slug {
     NSDictionary *temp;
-    for (NSDictionary *dictionary in self.projects) {
+    for (NSDictionary *dictionary in self.projectList) {
         if ([[dictionary objectForKey: @"slug"] isEqualToString:slug]) {
             temp = dictionary;
         }
@@ -95,35 +59,34 @@
     return temp;
 }
 
-//generic method used to retrieve array of info for listView -- exception may occur if given wrong argument
-//does not guarantee type safety of returned objects in array
--(NSArray *) arrayforListViewForInfo: (NSString *) key {
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    @try {
-        for (NSDictionary *dictionary in self.projects) {
-            [array addObject: [dictionary objectForKey: key]];
-        }
-    }@catch(NSException *e){
-        NSLog(@"exception thrown in method arrayForListViewForInfo; %@ %@", [e name], [e reason]);
-    }
-    return array;
-}
-
 //method used in the list view to retrieve names of projects
 -(NSArray *) projectNamesforListView {
     NSMutableArray *names = [[NSMutableArray alloc] init];
-    for (NSDictionary *dictionary in self.projects) {
-        [names addObject: [dictionary objectForKey: @"name"]];
+    for (NSDictionary *dictionary in self.projectList) {
+        NSString *name = [dictionary objectForKey: @"name"];
+        [names addObject: name];
     }
     return names;
 }
 
 //method used in the list view to retrieve locations of projects
--(NSArray *) locationsforListView {
+-(NSArray *) countryNamesforListView {
     NSMutableArray *locations = [[NSMutableArray alloc] init];
-    for (NSDictionary *dictionary in self.projects) {
-        [locations addObject: [dictionary objectForKey: @"country"]];
+    for (NSDictionary *dictionary in self.projectList) {
+        NSString *country =[dictionary objectForKey: @"country"];
+        [locations addObject: country];
     }
     return locations;
 }
+
+-(NSArray *) pslugsforListView {
+    NSMutableArray *locations = [[NSMutableArray alloc] init];
+    for (NSDictionary *dictionary in self.projectList) {
+        NSString *country =[dictionary objectForKey: @"slug"];
+        [locations addObject: country];
+    }
+    return locations;
+}
+
+
 @end

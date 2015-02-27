@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Kickstarter. All rights reserved.
 //
 
+//not necessary
 #ifndef ListChallenge_Constants_h
 #define ListChallenge_Constants_h
 

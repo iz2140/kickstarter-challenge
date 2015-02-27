@@ -32,26 +32,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    LCData *data = [[LCData alloc] init];
     
-    NSArray *projectNames = [[LCData sharedData] arrayforListViewForInfo: @"name"];
+    NSArray *projectNames = [data projectNamesforListView];
     if (projectNames)
         _projectNames = projectNames;
     
-    NSArray *locations = [[LCData sharedData] arrayforListViewForInfo: @"country"];
-    if (locations && [[locations firstObject] isKindOfClass:[NSString class]]) //check that array is not null and that they consist of string objects
+    NSArray *locations = [data countryNamesforListView];
+    if (locations)
         _locations = locations;
 
-    NSArray *pledges = [[LCData sharedData] arrayforListViewForInfo: @"pledged"];
-    if (pledges && [[pledges firstObject] isKindOfClass:[NSString class]]){
-        NSLog(@"hi");
-    } else {
-        NSLog(@"hrm");
-    }
+//    NSArray *pledges = [[LCData sharedData] arrayforListViewForInfo: @"pledged"];
+//    if (pledges && [[pledges firstObject] isKindOfClass:[NSString class]]){
+//        NSLog(@"hi");
+//    } else {
+//        NSLog(@"hrm");
+//    }
     
-    NSArray *pslugs = [[LCData sharedData] arrayforListViewForInfo:@"slug"];
-    if (pslugs && [[pslugs firstObject] isKindOfClass:[NSString class]])
+    NSArray *pslugs = [data pslugsforListView];
+    if (pslugs)
         _pSlugs = pslugs;
-    
     
 }
 
